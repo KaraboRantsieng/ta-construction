@@ -43,6 +43,11 @@ html {
   -webkit-text-size-adjust: 100%;
 }
 
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
 body {
   font-family: var(--font-body);
   font-size: 16px;
@@ -701,11 +706,25 @@ section {
 
 .cta-buttons {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  gap: 16px;
+  gap: 12px;
   margin-top: 40px;
+}
+
+.cta-btn {
+  display: block;
+  width: 100%;
+  max-width: 320px;
+  padding: 14px 20px;
+  box-sizing: border-box;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 6px;
 }
 
 .btn-white {
