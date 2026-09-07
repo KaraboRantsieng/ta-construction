@@ -5,22 +5,22 @@
 
 /* ----- Design Tokens ----- */
 :root {
-  --ice-white:   #F4FEFF;
-  --powder-blue: #A9C0E0;
-  --royal-blue:  #0E2F76;
-  --azure:       #0080FF;
-  --dark-ink:    #0D1B2A;
+  --ice-white:   #FFFFFF;
+  --powder-blue: #F5F5F5;
+  --royal-blue:  #414042;
+  --azure:       #F7941D;
+  --dark-ink:    #414042;
   --white:       #FFFFFF;
-  --border-light:#E0EAF5;
+  --border-light:#E8E8E8;
 
   --font-display: 'Anton', sans-serif;
   --font-body:    'Sora', sans-serif;
 
-  --shadow-card:   0 4px 24px rgba(14, 47, 118, 0.08);
-  --shadow-button: 0 4px 16px rgba(0, 128, 255, 0.20);
-  --shadow-permit: 0 8px 40px rgba(14, 47, 118, 0.14);
-  --shadow-hero:   0 8px 40px rgba(14, 47, 118, 0.12);
-  --shadow-nav:    0 2px 20px rgba(14, 47, 118, 0.10);
+  --shadow-card:   0 4px 24px rgba(65, 64, 66, 0.08);
+  --shadow-button: 0 4px 16px rgba(65, 64, 66, 0.08);
+  --shadow-permit: 0 8px 40px rgba(65, 64, 66, 0.08);
+  --shadow-hero:   0 8px 40px rgba(65, 64, 66, 0.08);
+  --shadow-nav:    0 2px 20px rgba(65, 64, 66, 0.08);
 
   --radius-btn:   6px;
   --radius-card:  12px;
@@ -143,12 +143,12 @@ section {
 }
 
 .btn-primary {
-  background-color: var(--royal-blue);
+  background-color: var(--azure);
   color: var(--white);
   box-shadow: var(--shadow-button);
 }
 .btn-primary:hover {
-  background-color: var(--azure);
+  background-color: var(--royal-blue);
   color: var(--white);
   transform: translateY(-1px);
 }
@@ -188,6 +188,17 @@ section {
   align-items: center;
   justify-content: space-between;
   gap: 24px;
+}
+
+.nav-brand {
+  display: block;
+}
+
+.nav-logo {
+  height: 52px;
+  width: auto;
+  display: block;
+  object-fit: contain;
 }
 
 .brand {
@@ -372,7 +383,9 @@ section {
   inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  padding: 12px;
+  background-color: var(--white);
 }
 
 /* Placeholder styling (used while client photos are pending) */
@@ -382,8 +395,8 @@ section {
   align-items: center;
   justify-content: center;
   gap: 4px;
-  background: linear-gradient(135deg, #B7CDE8 0%, var(--powder-blue) 100%);
-  border: 1px dashed rgba(14, 47, 118, 0.25);
+  background: linear-gradient(135deg, #FFFFFF 0%, var(--powder-blue) 100%);
+  border: 1px dashed rgba(65, 64, 66, 0.25);
   text-align: center;
   color: var(--royal-blue);
 }
@@ -414,7 +427,7 @@ section {
   width: 240px;
   padding: 24px 28px;
   background: var(--white);
-  border: 2px solid var(--royal-blue);
+  border: 3px solid var(--azure);
   border-radius: var(--radius-permit);
   box-shadow: var(--shadow-permit);
   transform: rotate(-2deg);
@@ -504,7 +517,7 @@ section {
 .service-card {
   background: var(--white);
   border-radius: var(--radius-card);
-  border-top: 4px solid var(--royal-blue);
+  border-top: 4px solid var(--azure);
   padding: 28px 24px;
   box-shadow: var(--shadow-card);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -512,7 +525,7 @@ section {
 
 .service-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 32px rgba(14, 47, 118, 0.14);
+  box-shadow: 0 12px 32px rgba(65, 64, 66, 0.08);
 }
 
 .service-name {
@@ -544,6 +557,12 @@ section {
   grid-template-columns: repeat(3, 1fr);
   gap: 16px;
   overflow: hidden;
+}
+
+.work-grid img,
+.landscape-grid img {
+  will-change: auto;
+  content-visibility: auto;
 }
 
 .work-img {
@@ -616,6 +635,7 @@ section {
   position: relative;
   background: var(--white);
   border-radius: var(--radius-card);
+  border-top: 4px solid var(--azure);
   padding: 40px 32px;
   text-align: center;
   box-shadow: var(--shadow-card);
@@ -631,8 +651,8 @@ section {
   font-family: var(--font-display);
   font-size: 64px;
   line-height: 1;
-  color: var(--royal-blue);
-  opacity: 0.15;
+  color: var(--azure);
+  opacity: 0.12;
   user-select: none;
   pointer-events: none;
 }
@@ -646,7 +666,7 @@ section {
   width: 56px;
   height: 56px;
   border-radius: 14px;
-  background: rgba(0, 128, 255, 0.08);
+  background: rgba(247, 148, 29, 0.08);
   color: var(--azure);
   margin-bottom: 20px;
 }
@@ -728,11 +748,11 @@ section {
 }
 
 .btn-white {
-  background-color: var(--white);
-  color: var(--royal-blue);
+  background-color: var(--azure);
+  color: var(--white);
 }
 .btn-white:hover {
-  background-color: var(--azure);
+  background-color: var(--royal-blue);
   color: var(--white);
 }
 
@@ -751,7 +771,7 @@ section {
    FOOTER
    ===================================================================== */
 .footer {
-  background-color: var(--dark-ink);
+  background-color: #2B2B2B;
   color: rgba(255, 255, 255, 0.60);
   padding: 40px 0;
 }
@@ -768,6 +788,13 @@ section {
   display: flex;
   flex-direction: column;
   gap: 4px;
+}
+
+.footer-logo {
+  height: 42px;
+  width: auto;
+  display: block;
+  object-fit: contain;
 }
 
 .footer-name {
@@ -841,7 +868,7 @@ section {
   position: absolute;
   inset: 0;
   border-radius: 50%;
-  border: 2px solid var(--royal-blue);
+  border: 2px solid var(--azure);
   opacity: 0.3;
   z-index: -1;
   animation: pulse 2.5s ease-out infinite;
@@ -897,6 +924,12 @@ section {
 /* =====================================================================
    RESPONSIVE — Mobile (< 768px)
    ===================================================================== */
+@media (max-width: 768px) {
+  .nav-logo {
+    height: 40px;
+  }
+}
+
 @media (max-width: 767px) {
   .nav {
     height: 64px;
@@ -904,6 +937,10 @@ section {
 
   .brand {
     font-size: 17px;
+  }
+
+  .nav-logo {
+    height: 40px;
   }
 
   /* Hamburger + mobile menu */

@@ -10,6 +10,7 @@
 
   /* ---------- 1. Scroll-triggered nav shadow ---------- */
   function onScroll() {
+    if (!nav) return;
     if (window.scrollY > 10) {
       nav.classList.add('scrolled');
     } else {
@@ -50,16 +51,20 @@
 
   /* ---------- 4. Scroll-in animations (IntersectionObserver) ---------- */
   var animated = document.querySelectorAll('.animate');
-  var observer = new IntersectionObserver(function (entries) {
-    entries.forEach(function (entry) {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.15 });
+  if ('IntersectionObserver' in window) {
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
 
-  animated.forEach(function (el) { observer.observe(el); });
+    animated.forEach(function (el) { observer.observe(el); });
+  } else {
+    animated.forEach(function (el) { el.classList.add('visible'); });
+  }
 
   // Stagger service cards within each row (4 columns desktop)
   var serviceCards = document.querySelectorAll('.service-card');
