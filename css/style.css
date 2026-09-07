@@ -886,8 +886,8 @@ section {
    SCROLL-IN ANIMATIONS
    ===================================================================== */
 .animate {
-  opacity: 0;
-  transform: translateY(20px);
+  opacity: 1;
+  transform: translateY(0px);
   transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
