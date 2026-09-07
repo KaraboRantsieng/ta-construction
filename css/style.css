@@ -568,18 +568,20 @@ section {
 .work-img {
   position: relative;
   width: 100%;
-  aspect-ratio: 4 / 3;
-  border-radius: var(--radius-img);
+  padding-bottom: 75%;
   overflow: hidden;
-  transition: transform 0.3s ease;
+  border-radius: 8px;
 }
 
-.work-img img {
+.work-img img,
+.work-img video {
   position: absolute;
-  inset: 0;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-radius: 8px;
 }
 
 .work-grid:hover .work-img {
